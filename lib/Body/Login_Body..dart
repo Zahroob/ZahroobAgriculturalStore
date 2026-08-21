@@ -3,18 +3,18 @@ import 'package:zahroobstor/Validator/Validator.dart';
 import 'package:zahroobstor/app_routes.dart';
 import 'package:zahroobstor/widget/AppSnackBar%20.dart';
 import 'package:zahroobstor/widget/CustomButton.dart';
-import 'package:zahroobstor/widget/SocialMediaIcon.dart';
 import 'package:zahroobstor/widget/TextUesr.dart';
-import 'package:zahroobstor/widget/orDivider.dart';
 
-class RegisterBody extends StatelessWidget {
-  RegisterBody({super.key});
+class LoginBody extends StatelessWidget {
+  LoginBody({super.key});
 
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  // Colors
   static const Color primaryGreen = Color(0xFF2E7D32);
+  static const Color lightGreen = Color(0xFF66BB6A);
   static const Color darkText = Color(0xFF1B3A1F);
 
   @override
@@ -30,7 +30,7 @@ class RegisterBody extends StatelessWidget {
         },
         child: Stack(
           children: [
-            // Background - بدون أي تغيير
+            // Background - لا تغيير
             Positioned.fill(
               child: Image.asset(
                 'assets/image/homeview.png',
@@ -47,7 +47,7 @@ class RegisterBody extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text(
-                      'Sign Up',
+                      'Login',
                       style: TextStyle(
                         fontSize: 16,
                         color: darkText,
@@ -55,7 +55,7 @@ class RegisterBody extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: height * 0.02),
+                    SizedBox(height: height * 0.05),
 
                     SizedBox(height: height * 0.05),
 
@@ -78,36 +78,47 @@ class RegisterBody extends StatelessWidget {
                     CustomBoutton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          AppSnackBar.success(context, 'Register Success');
+                          AppSnackBar.success(context, 'Login Success');
 
                           Navigator.pushNamed(context, AppRoutes.homeview);
                         } else {
-                          AppSnackBar.error(context, 'Register Failed');
+                          AppSnackBar.error(context, 'Login Failed');
                         }
                       },
-                      text: 'SIGN UP',
+                      text: 'Login',
                       colorbutton: primaryGreen,
                       colorText: Colors.white,
                     ),
 
                     SizedBox(height: height * 0.02),
-
+                    CustomBoutton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, AppRoutes.homeview);
+                      },
+                      text: 'تسجيل كضيف',
+                      colorbutton: primaryGreen,
+                      colorText: Colors.white,
+                    ),
+ SizedBox(height: height * 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'Already have an account ?',
-                          style: TextStyle(fontSize: 12, color: darkText),
+                          'Don\'t have an account?',
+                          style: TextStyle(fontSize: 14, color: darkText),
                         ),
 
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, AppRoutes.login);
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRoutes.registration,
+                            );
                           },
                           child: const Text(
-                            'Sign In',
+                            'Sign Up',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 14,
                               color: primaryGreen,
                               fontWeight: FontWeight.bold,
                             ),
@@ -116,12 +127,7 @@ class RegisterBody extends StatelessWidget {
                       ],
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50),
-                      child: OrDivider(),
-                    ),
-
-                    SocialMediaIcon(height: height),
+                    SizedBox(height: height * 0.10),
                   ],
                 ),
               ),

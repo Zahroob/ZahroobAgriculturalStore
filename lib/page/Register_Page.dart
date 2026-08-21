@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/pagebody/registerBody.dart';
+import 'package:zahroobstor/Body/register_Body.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body:  RegisterBody());
+    return Scaffold(body: RegisterBody());
   }
 }

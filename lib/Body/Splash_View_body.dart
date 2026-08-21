@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/app_routes.dart';
 
-class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+class SplashBody extends StatelessWidget {
+  const SplashBody({super.key});
 
   @override
   Widget build(BuildContext context) {
