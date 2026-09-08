@@ -80,7 +80,10 @@ class RegisterBody extends StatelessWidget {
                         if (formKey.currentState!.validate()) {
                           AppSnackBar.success(context, 'Register Success');
 
-                          Navigator.pushReplacementNamed(context, AppRoutes.homeview);
+                          Navigator.pushReplacementNamed(
+                            context,
+                            AppRoutes.mainview,
+                          );
                         } else {
                           AppSnackBar.error(context, 'Register Failed');
                         }
@@ -93,7 +96,10 @@ class RegisterBody extends StatelessWidget {
                     SizedBox(height: height * 0.02),
                     CustomBoutton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, AppRoutes.homeview);
+                        Navigator.pushReplacementNamed(
+                          context,
+                          AppRoutes.mainview,
+                        );
                       },
                       text: 'تسجيل كضيف',
                       colorbutton: primaryGreen,

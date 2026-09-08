@@ -80,7 +80,7 @@ class LoginBody extends StatelessWidget {
                         if (formKey.currentState!.validate()) {
                           AppSnackBar.success(context, 'Login Success');
 
-                          Navigator.pushNamed(context, AppRoutes.homeview);
+                          Navigator.pushNamed(context, AppRoutes.mainview);
                         } else {
                           AppSnackBar.error(context, 'Login Failed');
                         }
@@ -93,7 +93,7 @@ class LoginBody extends StatelessWidget {
                     SizedBox(height: height * 0.02),
                     CustomBoutton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, AppRoutes.homeview);
+                        Navigator.pushReplacementNamed(context, AppRoutes.mainview);
                       },
                       text: 'تسجيل كضيف',
                       colorbutton: primaryGreen,
