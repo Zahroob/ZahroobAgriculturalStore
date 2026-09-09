@@ -1,12 +1,32 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:zahroobstor/widget/Profile_Image.dart';
-import 'package:zahroobstor/widget/PromoCard.dart';
+import 'package:zahroobstor/widget/PromoBanner.dart';
+import 'package:zahroobstor/widget/category_card.dart';
+import 'package:zahroobstor/widget/category_data.dart';
 import 'package:zahroobstor/widget/search_field.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  bool showAllCategories = false;
+  final List<CategoryData> categories = const [
+    CategoryData(title: 'أسمدة', icon: Icons.eco_outlined),
+    CategoryData(title: 'بذور', icon: Icons.grass_outlined),
+    CategoryData(title: 'أدوات', icon: Icons.handyman_outlined),
+    CategoryData(title: 'معدات ري', icon: Icons.agriculture_outlined),
+
+    CategoryData(title: 'قطع غيار', icon: Icons.settings_outlined),
+    CategoryData(title: 'خراطيم', icon: Icons.water_outlined),
+    CategoryData(title: 'رشاشات', icon: Icons.spa_outlined),
+    CategoryData(title: 'مضخات', icon: Icons.water_drop_outlined),
+  ];
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -41,7 +61,7 @@ class HomeViewBody extends StatelessWidget {
       },
 
       child: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 40),
+        padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
         child: Column(
           children: [
             Row(
@@ -49,53 +69,101 @@ class HomeViewBody extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.notifications_none_outlined),
+                  icon: Icon(Icons.shopping_cart_outlined, color: Colors.green),
                 ),
-                SizedBox(width: 160),
-                Text(
-                  'الرئيسية',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+
+                const Spacer(),
+                Image.asset(
+                  'assets/image/zahroob_store_icon_256.png',
+                  width: 100,
+                  height: 100,
                 ),
-                SizedBox(width: 40),
-                ProfileImage(),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications_none_outlined,
+                    color: Colors.green,
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 20),
+
             SearchField(),
             SizedBox(height: 20),
-
-            PromoCard(backgroundImage: 'assets/image/ProfileBG.png'),
+            SizedBox(
+              height: 150,
+              child: PageView(
+                physics: const BouncingScrollPhysics(
+                  decelerationRate: ScrollDecelerationRate.fast,
+                ),
+                children: [PromoBanner(), PromoBanner(), PromoBanner()],
+              ),
+            ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextButton(onPressed: () {}, child: Text('عرض الكل')),
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      showAllCategories = !showAllCategories;
+                    });
+                  },
+                  child: Text(showAllCategories ? 'عرض أقل' : 'عرض الكل'),
+                ),
                 Text(
-                  'التصنيفات المنتجات',
+                  'تسوق حسب التصنيف',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            
-            SizedBox(height: 10),
 
             Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 2,
-                children: List.generate(
-                  6,
-                  (index) => Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(child: Text('تصنيف ${index + 1}')),
-                  ),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: showAllCategories
+                    ? categories.length
+                    : min(4, categories.length),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 9,
+                  crossAxisSpacing: 9,
+                  childAspectRatio: 0.82,
                 ),
+                itemBuilder: (context, index) {
+                  final category = categories[index];
+
+                  return InkWell(
+                    onTap: () {
+                      // الانتقال لصفحة منتجات هذا التصنيف
+                    },
+                    borderRadius: BorderRadius.circular(14),
+                    child: CategoryCard(
+                      title: category.title,
+                      icon: category.icon,
+                    ),
+                  );
+                },
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      showAllCategories = !showAllCategories;
+                    });
+                  },
+                  child: Text(showAllCategories ? 'عرض أقل' : 'عرض الكل'),
+                ),
+                Text(
+                  'الأكثر طلبا',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ],
         ),

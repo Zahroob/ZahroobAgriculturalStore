@@ -4,7 +4,7 @@ class SearchField extends StatelessWidget {
   const SearchField({
     super.key,
     this.controller,
-    this.hintText = 'ابحث عن منتجات او مشكلة نبات',
+    this.hintText = 'ابحث عن منتج زراعي',
     this.onChanged,
     this.width,
     this.height = 48,
@@ -48,7 +48,7 @@ class SearchField extends StatelessWidget {
 
           hintStyle: const TextStyle(color: hintColor, fontSize: 13),
 
-          prefixIcon: const Icon(Icons.search, color: primaryColor, size: 21),
+          suffixIcon: const Icon(Icons.search, color: primaryColor, size: 21),
 
           filled: true,
           fillColor: backgroundColor,
@@ -56,12 +56,12 @@ class SearchField extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 14),
 
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(18),
             borderSide: BorderSide.none,
           ),
 
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(22),
             borderSide: const BorderSide(color: borderColor),
           ),
 

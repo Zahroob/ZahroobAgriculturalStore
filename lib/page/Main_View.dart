@@ -9,38 +9,32 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  int currentIndex = 0;
+  int currentIndex = 3;
 
   final List<_NavigationItem> navigationItems = [
-    _NavigationItem(
-      page: const HomeViewBody(),
-      icon: Icons.home_outlined,
-      selectedIcon: Icons.home,
-      label: 'الرئيسية',
-    ),
-    _NavigationItem(
-      page: const Center(child: Text('التصنيفات')),
-      icon: Icons.category_outlined,
-      selectedIcon: Icons.category,
-      label: 'التصنيفات',
-    ),
-    _NavigationItem(
-      page: const Center(child: Text('السلة')),
-      icon: Icons.shopping_cart_outlined,
-      selectedIcon: Icons.shopping_cart,
-      label: 'السلة',
-    ),
-    _NavigationItem(
-      page: const Center(child: Text('طلباتي')),
-      icon: Icons.receipt_long_outlined,
-      selectedIcon: Icons.receipt_long,
-      label: 'طلباتي',
-    ),
     _NavigationItem(
       page: const Center(child: Text('حسابي')),
       icon: Icons.person_outline,
       selectedIcon: Icons.person,
       label: 'حسابي',
+    ),
+    _NavigationItem(
+      page: const Center(child: Text('الدعم')),
+      icon: Icons.support_agent_outlined,
+      selectedIcon: Icons.support_agent,
+      label: 'الدعم',
+    ),
+    _NavigationItem(
+      page: const Center(child: Text('التصنيفات')),
+      icon: Icons.grid_view_outlined,
+      selectedIcon: Icons.grid_view,
+      label: 'التصنيفات',
+    ),
+    _NavigationItem(
+      page: const HomeViewBody(),
+      icon: Icons.home_outlined,
+      selectedIcon: Icons.home,
+      label: 'الرئيسية',
     ),
   ];
 
