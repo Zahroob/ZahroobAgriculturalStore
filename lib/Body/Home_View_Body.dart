@@ -1,11 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:zahroobstor/widget/PromoBanner.dart';
-import 'package:zahroobstor/widget/category_card.dart';
+import 'package:zahroobstor/widget/Most_Sold_Products.dart';
+import 'package:zahroobstor/widget/categories_grid.dart';
 import 'package:zahroobstor/widget/category_data.dart';
-import 'package:zahroobstor/widget/search_field.dart';
+import 'package:zahroobstor/widget/home_header.dart';
+import 'package:zahroobstor/widget/promo_carousel.dart';
+import 'package:zahroobstor/widget/section_title.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -60,112 +60,31 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         );
       },
 
-      child: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.shopping_cart_outlined, color: Colors.green),
-                ),
-
-                const Spacer(),
-                Image.asset(
-                  'assets/image/zahroob_store_icon_256.png',
-                  width: 100,
-                  height: 100,
-                ),
-                const Spacer(),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.notifications_none_outlined,
-                    color: Colors.green,
-                  ),
-                ),
-              ],
-            ),
-
-            SearchField(),
-            SizedBox(height: 20),
-            SizedBox(
-              height: 150,
-              child: PageView(
-                physics: const BouncingScrollPhysics(
-                  decelerationRate: ScrollDecelerationRate.fast,
-                ),
-                children: [PromoBanner(), PromoBanner(), PromoBanner()],
-              ),
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      showAllCategories = !showAllCategories;
-                    });
-                  },
-                  child: Text(showAllCategories ? 'عرض أقل' : 'عرض الكل'),
-                ),
-                Text(
-                  'تسوق حسب التصنيف',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-
-            Expanded(
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: showAllCategories
-                    ? categories.length
-                    : min(4, categories.length),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 9,
-                  crossAxisSpacing: 9,
-                  childAspectRatio: 0.82,
-                ),
-                itemBuilder: (context, index) {
-                  final category = categories[index];
-
-                  return InkWell(
-                    onTap: () {
-                      // الانتقال لصفحة منتجات هذا التصنيف
-                    },
-                    borderRadius: BorderRadius.circular(14),
-                    child: CategoryCard(
-                      title: category.title,
-                      icon: category.icon,
-                    ),
-                  );
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+          child: Column(
+            children: [
+              HomeHeader(),
+              SizedBox(height: 20),
+              PromoCarousel(),
+              SectionTitle(
+                title: 'تسوق حسب التصنيف',
+                actionText: showAllCategories ? 'عرض أقل' : 'عرض الكل',
+                onActionPressed: () {
+                  setState(() {
+                    showAllCategories = !showAllCategories;
+                  });
                 },
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      showAllCategories = !showAllCategories;
-                    });
-                  },
-                  child: Text(showAllCategories ? 'عرض أقل' : 'عرض الكل'),
-                ),
-                Text(
-                  'الأكثر طلبا',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ],
+              CategoriesGrid(
+                categories: categories,
+                showAll: showAllCategories,
+              ),
+
+              const MostSoldProducts(),
+            ],
+          ),
         ),
       ),
     );
