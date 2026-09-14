@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:zahroobstor/app_routes.dart';
 
 class MostSoldProducts extends StatelessWidget {
   const MostSoldProducts({super.key});
 
+  static const products = [
+    (
+      name: 'رشاش ظهر يدوي',
+      details: 'سعة 20 لتر',
+      price: '1,250 ج.م',
+      image: 'assets/image/sprayer.png',
+    ),
+    (
+      name: 'طلمبة مياه زراعية',
+      details: 'مقاس 2 بوصة',
+      price: 'اطلب السعر',
+      image: 'assets/image/water_pump.png',
+    ),
+    (
+      name: 'خرطوم ري',
+      details: 'طول 50 متر',
+      price: '850 ج.م',
+      image: 'assets/image/irrigation_hose.png',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final products = [
-      {
-        'name': 'رشاش ظهر يدوي',
-        'details': 'سعة 20 لتر',
-        'price': '1,250 ج.م',
-        'image': 'assets/image/sprayer.png',
-      },
-      {
-        'name': 'طلمبة مياه زراعية',
-        'details': 'مقاس 2 بوصة',
-        'price': 'اطلب السعر',
-        'image': 'assets/image/water_pump.png',
-      },
-      {
-        'name': 'خرطوم ري',
-        'details': 'طول 50 متر',
-        'price': '850 ج.م',
-        'image': 'assets/image/irrigation_hose.png',
-      },
-    ];
-
     return Column(
       children: [
         Row(
@@ -33,7 +34,7 @@ class MostSoldProducts extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                // الانتقال لصفحة كل المنتجات
+                Navigator.pushNamed(context, AppRoutes.allProducts);
               },
               child: const Text(
                 'عرض الكل',
@@ -63,7 +64,7 @@ class MostSoldProducts extends StatelessWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(16),
                   onTap: () {
-                    // الانتقال لتفاصيل المنتج
+                    Navigator.pushNamed(context, AppRoutes.productDetails);
                   },
                   child: Ink(
                     decoration: BoxDecoration(
@@ -79,7 +80,7 @@ class MostSoldProducts extends StatelessWidget {
                               top: Radius.circular(16),
                             ),
                             child: Image.asset(
-                              product['image']!,
+                              product.image,
                               width: double.infinity,
                               fit: BoxFit.cover,
                               errorBuilder: (_, _, _) {
@@ -103,7 +104,7 @@ class MostSoldProducts extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                product['name']!,
+                                product.name,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -113,7 +114,7 @@ class MostSoldProducts extends StatelessWidget {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                product['details']!,
+                                product.details,
                                 style: TextStyle(
                                   color: Colors.grey.shade600,
                                   fontSize: 12,
@@ -121,7 +122,7 @@ class MostSoldProducts extends StatelessWidget {
                               ),
                               const SizedBox(height: 7),
                               Text(
-                                product['price']!,
+                                product.price,
                                 style: const TextStyle(
                                   color: Color(0xFF156651),
                                   fontWeight: FontWeight.bold,

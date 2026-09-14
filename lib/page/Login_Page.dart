@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/Body/Login_Body..dart';
+import 'package:zahroobstor/Body/login_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LoginBody(),
-    );
+    return Scaffold(body: LoginBody());
   }
 }

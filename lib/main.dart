@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.Splash,
-      routes: AppRoutes().appRoutes,
+      routes: AppRoutes.appRoutes,
     );
   }
 }

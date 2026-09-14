@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/search_field.dart';
+import 'package:zahroobstor/widget/Profile_Image.dart';
+import 'package:zahroobstor/widget/app_logo.dart';
+import 'package:zahroobstor/widget/shopping_cart.dart';
 
-class HomeHeader  extends StatelessWidget {
-  const HomeHeader ({
-    super.key,
-  });
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,29 +13,15 @@ class HomeHeader  extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.shopping_cart_outlined, color: Colors.green),
-            ),
-        
+            ShoppingCart(),
             const Spacer(),
-            Image.asset(
-              'assets/image/zahroob_store_icon_256.png',
-              width: 100,
-              height: 100,
-            ),
+            AppLogo(),
             const Spacer(),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications_none_outlined,
-                color: Colors.green,
-              ),
-            ),
+            ProfileImage(),
           ],
         ),
-        
-        SearchField(),
+
+      
       ],
     );
   }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/app_routes.dart';
 import 'package:zahroobstor/widget/auth_background.dart';
-import 'package:zahroobstor/widget/register_form.dart';
+import 'package:zahroobstor/widget/login_form.dart';
 
-class RegisterBody extends StatefulWidget {
-  const RegisterBody({super.key});
+class LoginBody extends StatefulWidget {
+  const LoginBody({super.key});
 
   @override
-  State<RegisterBody> createState() => _RegisterBodyState();
+  State<LoginBody> createState() => _LoginBodyState();
 }
 
-class _RegisterBodyState extends State<RegisterBody> {
+class _LoginBodyState extends State<LoginBody> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -29,15 +29,15 @@ class _RegisterBodyState extends State<RegisterBody> {
       onTap: FocusScope.of(context).unfocus,
       child: AuthBackground(
         child: Center(
-          child: RegisterForm(
+          child: LoginForm(
             formKey: _formKey,
             emailController: _emailController,
             passwordController: _passwordController,
             onGuestPressed: () {
               Navigator.pushReplacementNamed(context, AppRoutes.mainview);
             },
-            onLoginPressed: () {
-              Navigator.pushNamed(context, AppRoutes.login);
+            onRegisterPressed: () {
+              Navigator.pushReplacementNamed(context, AppRoutes.registration);
             },
           ),
         ),

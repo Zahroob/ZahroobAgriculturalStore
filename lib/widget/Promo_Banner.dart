@@ -14,7 +14,10 @@ class PromoBanner extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             // الصورة كخلفية
-            Image.asset("assets/image/bannarhomeview.png", fit: BoxFit.cover),
+            const Image(
+              image: AssetImage('assets/image/bannarhomeview.png'),
+              fit: BoxFit.cover,
+            ),
 
             Container(
               decoration: BoxDecoration(
@@ -30,12 +33,12 @@ class PromoBanner extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "لأرض أكثر نتاجا ",
                     style: TextStyle(
                       fontSize: 21,
@@ -43,7 +46,7 @@ class PromoBanner extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "مع أفضل الاسمدة الزراعية ",
                     style: TextStyle(
                       fontSize: 21,
@@ -52,7 +55,7 @@ class PromoBanner extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   SizedBox(
                     height: 30,
                     width: 95,
@@ -61,7 +64,7 @@ class PromoBanner extends StatelessWidget {
                         backgroundColor: Colors.white,
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "تسوق العرض",
                         style: TextStyle(fontSize: 9, color: Color(0xff156651)),
                       ),

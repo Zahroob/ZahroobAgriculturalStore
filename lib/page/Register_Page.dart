@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/Body/register_Body.dart';
+import 'package:zahroobstor/Body/register_body.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
