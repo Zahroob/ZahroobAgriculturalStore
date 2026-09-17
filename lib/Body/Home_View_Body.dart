@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zahroobstor/app_routes.dart';
 import 'package:zahroobstor/widget/Most_Sold_Products.dart';
 import 'package:zahroobstor/widget/category_data.dart';
 import 'package:zahroobstor/widget/home_categories_section.dart';
@@ -6,14 +7,15 @@ import 'package:zahroobstor/widget/promo_carousel.dart';
 import 'package:zahroobstor/widget/search_field.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({super.key, this.onShowAllCategories});
+
+  final VoidCallback? onShowAllCategories;
 
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-  bool showAllCategories = false;
   final List<CategoryData> categories = const [
     CategoryData(title: 'أسمدة', icon: Icons.eco_outlined),
     CategoryData(title: 'بذور', icon: Icons.grass_outlined),
@@ -37,10 +39,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             const PromoCarousel(),
             HomeCategoriesSection(
               categories: categories,
-              showAll: showAllCategories,
-              onToggleShowAll: () {
-                setState(() => showAllCategories = !showAllCategories);
-              },
+              onShowAll: widget.onShowAllCategories ??
+                  () => Navigator.pushNamed(context, AppRoutes.categories),
             ),
             const MostSoldProducts(),
           ],

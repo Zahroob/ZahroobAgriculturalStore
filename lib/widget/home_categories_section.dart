@@ -5,14 +5,12 @@ import 'package:zahroobstor/widget/section_title.dart';
 
 class HomeCategoriesSection extends StatelessWidget {
   final List<CategoryData> categories;
-  final bool showAll;
-  final VoidCallback onToggleShowAll;
+  final VoidCallback? onShowAll;
 
   const HomeCategoriesSection({
     super.key,
     required this.categories,
-    required this.showAll,
-    required this.onToggleShowAll,
+    this.onShowAll,
   });
 
   @override
@@ -21,10 +19,10 @@ class HomeCategoriesSection extends StatelessWidget {
       children: [
         SectionTitle(
           title: 'تسوق حسب التصنيف',
-          actionText: showAll ? 'عرض أقل' : 'عرض الكل',
-          onActionPressed: onToggleShowAll,
+          actionText: 'عرض الكل',
+          onActionPressed: onShowAll,
         ),
-        CategoriesGrid(categories: categories, showAll: showAll),
+        CategoriesGrid(categories: categories),
       ],
     );
   }

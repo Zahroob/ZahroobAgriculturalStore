@@ -17,19 +17,10 @@ class SectionTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        if (actionText != null)
-          TextButton(
-            onPressed: onActionPressed,
-            child: Text(actionText!),
-          )
-        else
-          const SizedBox(width: 70),
+        TextButton(onPressed: onActionPressed, child: Text(actionText!)),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ],
     );

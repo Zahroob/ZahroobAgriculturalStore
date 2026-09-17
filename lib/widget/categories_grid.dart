@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/app_routes.dart';
 import 'package:zahroobstor/widget/category_card.dart';
 import 'package:zahroobstor/widget/category_data.dart';
 
@@ -10,7 +9,7 @@ class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({
     super.key,
     required this.categories,
-    required this.showAll,
+    this.showAll = false,
   });
 
   @override
@@ -34,10 +33,7 @@ class CategoriesGrid extends StatelessWidget {
         final category = visibleCategories[index];
 
         return InkWell(
-          onTap: () {
-            //  علي حسب طلبك، عند الضغط على أي تصنيف سيتم الانتقال إلى صفحة التصنيفات العامة
-            Navigator.pushNamed(context, AppRoutes.categories);
-          },
+          onTap: () {},
           borderRadius: BorderRadius.circular(14),
           child: CategoryCard(title: category.title, icon: category.icon),
         );

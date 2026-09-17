@@ -17,61 +17,53 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
+  static const int categoriesTabIndex = 2;
   int currentIndex = 3;
+  final StoreAppBar appBar = StoreAppBar(
+    photo: ProfileImage(),
+    logo: AppLogo(),
+    shoppingCart: ShoppingCart(),
+  );
 
-  final List<_NavigationItem> navigationItems = [
-    _NavigationItem(
-      page: const MyProfilePage(),
+  late final List<_NavigationItem> navigationItems = [
+    const _NavigationItem(
+      page: MyProfilePage(),
       icon: Icons.person_outline,
       selectedIcon: Icons.person,
       label: 'حسابي',
     ),
-    _NavigationItem(
-      page: const SupportPage(),
+    const _NavigationItem(
+      page: SupportPage(),
       icon: Icons.support_agent_outlined,
       selectedIcon: Icons.support_agent,
       label: 'الدعم',
     ),
-    _NavigationItem(
-      page: const CategoriesPage(),
+    const _NavigationItem(
+      page: CategoriesPage(),
       icon: Icons.grid_view_outlined,
       selectedIcon: Icons.grid_view,
       label: 'التصنيفات',
     ),
     _NavigationItem(
-      page: const HomeViewBody(),
+      page: HomeViewBody(onShowAllCategories: _openCategoriesTab),
       icon: Icons.home_outlined,
       selectedIcon: Icons.home,
       label: 'الرئيسية',
     ),
   ];
 
+  void _openCategoriesTab() {
+    setState(() => currentIndex = categoriesTabIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const StoreAppBar(
-        photo: ProfileImage(),
-        logo: AppLogo(),
-        shoppingCart: ShoppingCart(),
-      ),
-      // AppBar(
-      //   clipBehavior: Clip.antiAlias,
-
-      //   shape: const RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(24)),
-      //   ),
-      //   flexibleSpace: AnimatedContainer(
-      //     duration: const Duration(milliseconds: 250),
-      //     color: isScrolled ? Color(0xFFF7F3ED) : Colors.white,
-      //   ),
-      //   toolbarHeight: 70,
-      //   elevation: 0,
-      //   scrolledUnderElevation: 0,
-      //   backgroundColor: Colors.transparent,
-      //   surfaceTintColor: Colors.transparent,
-
-      //   title: const HomeHeader(),
-      //   centerTitle: true,
+      appBar: currentIndex == 0 ? null : appBar,
+      // appBar: const StoreAppBar(
+      //   photo: ProfileImage(),
+      //   logo: AppLogo(),
+      //   shoppingCart: ShoppingCart(),
       // ),
       body: PopScope(
         canPop: false,

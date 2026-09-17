@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/page/Home_View.dart';
+import 'package:zahroobstor/page/Home_View_page.dart';
 import 'package:zahroobstor/page/Login_Page.dart';
 import 'package:zahroobstor/page/Main_View.dart';
-import 'package:zahroobstor/page/Splash_View.dart';
+import 'package:zahroobstor/page/Splash_View_page.dart';
 import 'package:zahroobstor/page/all_products_page.dart';
 import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
