@@ -25,9 +25,10 @@ class ProfileHeader extends StatelessWidget {
 
         Positioned(
           top: 32,
+          left: 16,
+          right: 16,
           child: TopBarWidget(
-            widthSizedBox: 190,
-            title: 'My Account',
+            title: 'حسابي',
             colorText: const Color(0xFFFFFFFF),
             colorIcon: const Color(0xFFFFFFFF),
           ),

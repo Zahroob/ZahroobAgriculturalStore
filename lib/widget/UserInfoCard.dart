@@ -41,7 +41,7 @@ class UserInfoCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Mahmoud Zahroob",
+                  "محمود زهروب",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const Text(

@@ -59,7 +59,7 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: currentIndex == 0 ? null : appBar,
+      appBar: currentIndex == 0 || currentIndex == 1 ? null : appBar,
       // appBar: const StoreAppBar(
       //   photo: ProfileImage(),
       //   logo: AppLogo(),

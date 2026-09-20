@@ -7,54 +7,58 @@ class MyProfileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const ProfileHeader(),
-        const SizedBox(height: 67),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              const Text(
-                'General',
-                style: TextStyle(color: Color(0xFF404040), fontSize: 14),
-              ),
-              const SizedBox(height: 16),
-              ProfileOptionItem(
-                onTap: () {},
-                icon: Icons.receipt_outlined,
-                text: 'Transaction',
-              ),
-              ProfileOptionItem(
-                onTap: () {},
-                icon: Icons.favorite_border_outlined,
-                text: 'Wishlist',
-              ),
-              ProfileOptionItem(
-                icon: Icons.saved_search_outlined,
-                text: 'Saved Address',
-                onTap: () {},
-              ),
-              ProfileOptionItem(
-                icon: Icons.payment_outlined,
-                text: 'Payment Methods',
-                onTap: () {},
-              ),
-              ProfileOptionItem(
-                icon: Icons.bookmark_border_outlined,
-                text: 'Notification',
-                onTap: () {},
-              ),
-              ProfileOptionItem(
-                icon: Icons.security_outlined,
-                text: 'Security',
-                onTap: () {},
-              ),
-            ],
+    return Directionality(
+      textDirection: TextDirection.rtl,
+
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const ProfileHeader(),
+          const SizedBox(height: 67),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                const Text(
+                  'عام',
+                  style: TextStyle(color: Color(0xFF404040), fontSize: 14),
+                ),
+                const SizedBox(height: 16),
+                ProfileOptionItem(
+                  onTap: () {},
+                  icon: Icons.receipt_outlined,
+                  text: 'المعاملات',
+                ),
+                ProfileOptionItem(
+                  onTap: () {},
+                  icon: Icons.favorite_border_outlined,
+                  text: 'المفضلة',
+                ),
+                ProfileOptionItem(
+                  icon: Icons.saved_search_outlined,
+                  text: 'العناوين المحفوظة',
+                  onTap: () {},
+                ),
+                ProfileOptionItem(
+                  icon: Icons.payment_outlined,
+                  text: 'طرق الدفع',
+                  onTap: () {},
+                ),
+                ProfileOptionItem(
+                  icon: Icons.bookmark_border_outlined,
+                  text: 'الإشعارات',
+                  onTap: () {},
+                ),
+                ProfileOptionItem(
+                  icon: Icons.security_outlined,
+                  text: 'الأمان',
+                  onTap: () {},
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

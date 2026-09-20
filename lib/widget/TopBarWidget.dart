@@ -6,23 +6,26 @@ class TopBarWidget extends StatelessWidget {
     required this.title,
     required this.colorText,
     required this.colorIcon,
-    this.mainAxisAlignment, this.widthSizedBox,
   });
 
   final String title;
   final Color colorText;
   final Color colorIcon;
-  final MainAxisAlignment? mainAxisAlignment;
-  final double? widthSizedBox;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
       children: [
         Text(title, style: TextStyle(fontSize: 24, color: colorText)),
-        SizedBox(width: widthSizedBox,),
-        Icon(Icons.notifications_none_outlined, color: colorIcon),
+
+        IconButton(
+          onPressed: () {
+            // فتح الإعدادات
+          },
+          icon: Icon(Icons.settings_outlined, color: colorIcon),
+        ),
       ],
     );
   }
