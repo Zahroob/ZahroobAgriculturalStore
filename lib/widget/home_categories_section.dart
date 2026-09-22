@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:zahroobstor/data/category_data_model.dart';
 import 'package:zahroobstor/widget/categories_grid.dart';
-import 'package:zahroobstor/widget/category_data.dart';
 import 'package:zahroobstor/widget/section_title.dart';
 
 class HomeCategoriesSection extends StatelessWidget {
-  final List<CategoryData> categories;
+  final List<CategoryDataModel> categories;
   final VoidCallback? onShowAll;
 
   const HomeCategoriesSection({

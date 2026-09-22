@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/widget/category_card.dart';
-import 'package:zahroobstor/widget/category_data.dart';
+import 'package:zahroobstor/data/category_data_model.dart';
 
 class CategoriesGrid extends StatelessWidget {
-  final List<CategoryData> categories;
+  final List<CategoryDataModel> categories;
   final bool showAll;
 
   const CategoriesGrid({
@@ -35,7 +35,16 @@ class CategoriesGrid extends StatelessWidget {
         return InkWell(
           onTap: () {},
           borderRadius: BorderRadius.circular(14),
-          child: CategoryCard(title: category.title, icon: category.icon),
+          child: CategoryCard(
+            title: category.title,
+            icon: category.icon,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: category.pageBuilder),
+              );
+            },
+          ),
         );
       },
     );

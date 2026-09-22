@@ -7,6 +7,7 @@ import 'package:zahroobstor/page/all_products_page.dart';
 import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
 import 'package:zahroobstor/page/my_profily_page.dart';
+import 'package:zahroobstor/page/one_product.dart';
 import 'package:zahroobstor/page/product_details_page.dart';
 import 'package:zahroobstor/page/product_specifications_page.dart';
 import 'package:zahroobstor/page/register_Page.dart';
@@ -25,6 +26,8 @@ class AppRoutes {
   static const String allProducts = '/all-products';
   static const String productSpecifications = '/product-specifications';
   static const String cart = '/cart';
+  static const String oneProduct = '/oneProduct';
+
 
   static final Map<String, WidgetBuilder> appRoutes = {
     AppRoutes.Splash: (context) => const SplashView(),
@@ -40,5 +43,7 @@ class AppRoutes {
     AppRoutes.productSpecifications: (context) =>
         const ProductSpecificationsPage(),
     AppRoutes.cart: (context) => const CartPage(),
+    AppRoutes.oneProduct: (context) => const OneProduct(),
+
   };
 }

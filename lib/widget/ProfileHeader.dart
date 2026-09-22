@@ -30,7 +30,8 @@ class ProfileHeader extends StatelessWidget {
           child: TopBarWidget(
             title: 'حسابي',
             colorText: const Color(0xFFFFFFFF),
-            colorIcon: const Color(0xFFFFFFFF),
+            colorIcon: const Color(0xFFFFFFFF),             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
           ),
         ),
         UserInfoCard(),

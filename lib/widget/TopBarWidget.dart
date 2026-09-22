@@ -6,6 +6,7 @@ class TopBarWidget extends StatelessWidget {
     required this.title,
     required this.colorText,
     required this.colorIcon,
+    required MainAxisAlignment mainAxisAlignment,
   });
 
   final String title;
