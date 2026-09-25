@@ -68,6 +68,13 @@ class MostSoldProducts extends StatelessWidget {
                   },
                   child: Ink(
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.15),
+                          blurRadius: 6,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
                     ),

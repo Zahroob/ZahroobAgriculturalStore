@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/data/category_data_model.dart';
-import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/one_product.dart';
 
 final List<CategoryDataModel> categories = [

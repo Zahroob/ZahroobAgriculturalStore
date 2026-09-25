@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/data/category_data.dart';
-import 'package:zahroobstor/page/my_profily_page.dart';
-import 'package:zahroobstor/page/one_product.dart';
-import 'package:zahroobstor/widget/category_card.dart';
-import 'package:zahroobstor/data/category_data_model.dart';
-import 'package:zahroobstor/widget/search_field.dart';
+import 'package:zahroobstor/Body/categories_body.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
@@ -13,40 +8,6 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-
-      children: [
-
-        SearchField(),
-
-        Expanded(
-
-          child: GridView.builder(
-            padding: const EdgeInsets.all(12),
-            itemCount: categories.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 1.1,
-            ),
-            itemBuilder: (context, index) {
-              final category = categories[index];
-
-              return CategoryCard(
-                title: category.title,
-                icon: category.icon,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: category.pageBuilder),
-                  );
-                },
-              );
-            },
-          ),
-        ),
-      ],
-    );
+    return CategoriesBody();
   }
 }

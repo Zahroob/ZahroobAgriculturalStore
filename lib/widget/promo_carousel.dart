@@ -27,7 +27,8 @@ class _PromoCarouselState extends State<PromoCarousel> {
         children: [
           SizedBox(
             height: 199,
-            child: PageView(
+
+            child: PageView.builder(
               controller: _pageController,
               physics: const BouncingScrollPhysics(
                 decelerationRate: ScrollDecelerationRate.fast,
@@ -35,7 +36,20 @@ class _PromoCarouselState extends State<PromoCarousel> {
               onPageChanged: (page) {
                 setState(() => _currentPage = page);
               },
-              children: const [PromoBanner(), PromoBanner(), PromoBanner()],
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                return AnimatedBuilder(
+                  animation: _pageController,
+                  builder: (BuildContext context, Widget? child) {
+                    double page = _pageController.page ?? 0;
+                    double difference = (page - index).abs();
+                    double opacity = (1 - difference).clamp(0.0, 1.0);
+                    return Opacity(opacity: opacity, child: child);
+                  },
+                  child: const PromoBanner(),
+                );
+              },
+              // children: const [PromoBanner(), PromoBanner(), PromoBanner()],
             ),
           ),
           const SizedBox(height: 8),

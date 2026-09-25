@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
 class StoreAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Widget photo;
   final Widget logo;
-  final Widget shoppingCart;
   final bool showBackButton;
+final String title;
   final VoidCallback? onCartPressed;
   final VoidCallback? onBackPressed;
 
   const StoreAppBar({
     super.key,
-    required this.photo,
     required this.logo,
-    required this.shoppingCart,
     this.showBackButton = false,
     this.onCartPressed,
-    this.onBackPressed,
+    this.onBackPressed, 
+    required this.title,
   });
 
   @override
+
+  
   Size get preferredSize => const Size.fromHeight(70);
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: TextDirection.ltr,
       child: AppBar(
         clipBehavior: Clip.antiAlias,
         toolbarHeight: 70,
@@ -32,21 +32,32 @@ class StoreAppBar extends StatelessWidget implements PreferredSizeWidget {
         scrolledUnderElevation: 0,
         backgroundColor: const Color(0xFFF7F3ED),
         surfaceTintColor: Colors.transparent,
+
         centerTitle: true,
+        flexibleSpace: SafeArea(
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: SizedBox(width: 75, height: 75, child: logo),
+            ),
+          ),
+        ),
 
-        leading: showBackButton
-            ? IconButton(
-                onPressed: onBackPressed ?? () => Navigator.maybePop(context),
-                icon: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  color: Color(0xFF156651),
-                ),
-              )
-            : Padding(padding: const EdgeInsets.all(10), child: photo),
+        title:  Text(title, style: TextStyle(color: Color(0xFF156651))),
 
-        title: logo,
-
-        actions: [IconButton(onPressed: onCartPressed, icon: shoppingCart)],
+        actions: [
+          Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                icon: const Icon(Icons.menu, color: Color(0xFF156651)),
+              );
+            },
+          ),
+        ],
 
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(24)),

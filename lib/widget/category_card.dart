@@ -18,16 +18,19 @@ class CategoryCard extends StatelessWidget {
       color: Colors.white,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
-          borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(14),
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(14),
-            // image: const DecorationImage(
-            //   image: AssetImage('assets/image/PROMP.PNG'),
-            //   fit: BoxFit.cover,
-            // ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.15),
+                blurRadius: 6,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

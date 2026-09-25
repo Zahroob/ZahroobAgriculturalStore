@@ -18,16 +18,7 @@ class TopBarWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-      children: [
-        Text(title, style: TextStyle(fontSize: 24, color: colorText)),
-
-        IconButton(
-          onPressed: () {
-            // فتح الإعدادات
-          },
-          icon: Icon(Icons.settings_outlined, color: colorIcon),
-        ),
-      ],
+      children: [Text(title, style: TextStyle(fontSize: 24, color: colorText))],
     );
   }
 }

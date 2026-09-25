@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zahroobstor/Body/Home_View_Body.dart';
+import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
 import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/support_page.dart';
-import 'package:zahroobstor/widget/Profile_Image.dart';
 import 'package:zahroobstor/widget/app_logo.dart';
-import 'package:zahroobstor/widget/shopping_cart.dart';
 import 'package:zahroobstor/widget/store_appBar.dart';
 
 class MainView extends StatefulWidget {
@@ -19,11 +18,7 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   static const int categoriesTabIndex = 2;
   int currentIndex = 3;
-  final StoreAppBar appBar = StoreAppBar(
-    photo: ProfileImage(),
-    logo: AppLogo(),
-    shoppingCart: ShoppingCart(),
-  );
+  final StoreAppBar appBar = StoreAppBar(logo: AppLogo(), title: '',);
 
   late final List<_NavigationItem> navigationItems = [
     const _NavigationItem(
@@ -37,6 +32,12 @@ class _MainViewState extends State<MainView> {
       icon: Icons.support_agent_outlined,
       selectedIcon: Icons.support_agent,
       label: 'الدعم',
+    ),
+    const _NavigationItem(
+      page: CartPage(),
+      icon: Icons.person_outline,
+      selectedIcon: Icons.person,
+      label: 'السلة',
     ),
     const _NavigationItem(
       page: CategoriesPage(),
@@ -59,12 +60,23 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: currentIndex == 0 || currentIndex == 1 ? null : appBar,
-      // appBar: const StoreAppBar(
-      //   photo: ProfileImage(),
-      //   logo: AppLogo(),
-      //   shoppingCart: ShoppingCart(),
-      // ),
+      appBar: currentIndex == 0 ? null : appBar,
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text('Drawer header'),
+            ),
+            ListTile(title: Text('Item 1'), onTap: () {}),
+            ListTile(title: Text('Item 2'), onTap: () {}),
+          ],
+        ),
+      ),
+      drawerScrimColor: Colors.black.withValues(alpha: 0.5),
+      endDrawerEnableOpenDragGesture: true,
+
       body: PopScope(
         canPop: false,
         onPopInvokedWithResult: (didPop, result) {
