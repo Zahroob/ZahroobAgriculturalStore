@@ -16,7 +16,7 @@ import 'package:zahroobstor/page/support_page.dart';
 class AppRoutes {
   static const String login = '/login';
   static const String registration = '/registration';
-  static const String Splash = '/SplashView';
+  static const String splash = '/SplashView';
   static const String homeview = '/homeview';
   static const String mainview = '/mainview';
   static const String myprofile = '/myprofile';
@@ -30,7 +30,7 @@ class AppRoutes {
 
 
   static final Map<String, WidgetBuilder> appRoutes = {
-    AppRoutes.Splash: (context) => const SplashView(),
+    AppRoutes.splash: (context) => const SplashView(),
     AppRoutes.login: (context) => const LoginPage(),
     AppRoutes.registration: (context) => const RegisterPage(),
     AppRoutes.homeview: (context) => const HomeView(),
