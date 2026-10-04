@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/page/Home_View_page.dart';
-import 'package:zahroobstor/page/Login_Page.dart';
-import 'package:zahroobstor/page/Main_View.dart';
-import 'package:zahroobstor/page/Splash_View_page.dart';
+import 'package:zahroobstor/page/home_view_page.dart';
+import 'package:zahroobstor/page/login_page.dart';
+import 'package:zahroobstor/page/main_view.dart';
+import 'package:zahroobstor/page/splash_view_page.dart';
 import 'package:zahroobstor/page/all_products_page.dart';
 import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
@@ -10,7 +10,7 @@ import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/one_product.dart';
 import 'package:zahroobstor/page/product_details_page.dart';
 import 'package:zahroobstor/page/product_specifications_page.dart';
-import 'package:zahroobstor/page/register_Page.dart';
+import 'package:zahroobstor/page/register_page.dart';
 import 'package:zahroobstor/page/support_page.dart';
 
 class AppRoutes {

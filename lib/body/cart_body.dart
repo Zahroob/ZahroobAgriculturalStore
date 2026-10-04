@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/page/NameProduct.dart';
-import 'package:zahroobstor/widget/HeartIconWidget.dart';
-import 'package:zahroobstor/widget/ProductDiscount.dart';
-import 'package:zahroobstor/widget/ProductImage.dart';
-import 'package:zahroobstor/widget/QuantityCounter.dart';
-import 'package:zahroobstor/widget/SmallOfferWidget.dart';
-import 'package:zahroobstor/widget/TopBarWidget.dart';
+import 'package:zahroobstor/page/name_product.dart';
+import 'package:zahroobstor/widget/heart_icon_widget.dart';
+import 'package:zahroobstor/widget/product_discount.dart';
+import 'package:zahroobstor/widget/product_image.dart';
+import 'package:zahroobstor/widget/quantity_counter.dart';
+import 'package:zahroobstor/widget/small_offer_widget.dart';
+import 'package:zahroobstor/widget/top_bar_widget.dart';
 import 'package:zahroobstor/widget/product_details/product_price.dart';
 
 class CartBody extends StatelessWidget {

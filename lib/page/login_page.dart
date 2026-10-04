@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/Body/login_body.dart';
+import 'package:zahroobstor/body/login_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

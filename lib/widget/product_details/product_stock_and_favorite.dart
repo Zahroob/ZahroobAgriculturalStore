@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/HeartIconWidget.dart';
+import 'package:zahroobstor/widget/heart_icon_widget.dart';
 
 class ProductStockAndFavorite extends StatelessWidget {
   const ProductStockAndFavorite({super.key});

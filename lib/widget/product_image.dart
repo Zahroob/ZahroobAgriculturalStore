@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/SmallOfferWidget.dart';
+import 'package:zahroobstor/widget/small_offer_widget.dart';
 
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key, required this.height, required this.width, required this.imageproduct});

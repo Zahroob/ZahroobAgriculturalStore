@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/TopBarWidget.dart';
-import 'package:zahroobstor/widget/UserInfoCard.dart';
+import 'package:zahroobstor/widget/top_bar_widget.dart';
+import 'package:zahroobstor/widget/user_info_card.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});

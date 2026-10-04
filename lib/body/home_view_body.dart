@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/app_routes.dart';
 import 'package:zahroobstor/data/category_data.dart';
-import 'package:zahroobstor/widget/Most_Sold_Products.dart';
+import 'package:zahroobstor/widget/most_sold_products.dart';
 import 'package:zahroobstor/widget/home_categories_section.dart';
 import 'package:zahroobstor/widget/promo_carousel.dart';
 import 'package:zahroobstor/widget/search_field.dart';

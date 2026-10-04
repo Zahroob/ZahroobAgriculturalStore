@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/Body/cart_body.dart';
+import 'package:zahroobstor/body/cart_body.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});

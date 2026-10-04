@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/Promo_Banner.dart';
+import 'package:zahroobstor/widget/promo_banner.dart';
 
 class PromoCarousel extends StatefulWidget {
   const PromoCarousel({super.key});

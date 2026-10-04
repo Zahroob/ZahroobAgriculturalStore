@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/Validator/Validator.dart';
-import 'package:zahroobstor/widget/App_SnackBar%20.dart';
-import 'package:zahroobstor/widget/Custom_Button.dart';
-import 'package:zahroobstor/widget/SocialMediaIcon.dart';
-import 'package:zahroobstor/widget/TextUesr.dart';
-import 'package:zahroobstor/widget/or_Divider.dart';
+import 'package:zahroobstor/validator/validator.dart';
+import 'package:zahroobstor/widget/app_snack_bar.dart';
+import 'package:zahroobstor/widget/custom_button.dart';
+import 'package:zahroobstor/widget/social_media_icon.dart';
+import 'package:zahroobstor/widget/text_uesr.dart';
+import 'package:zahroobstor/widget/or_divider.dart';
 
 class RegisterForm extends StatelessWidget {
   final GlobalKey<FormState> formKey;

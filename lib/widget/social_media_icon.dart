@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/Icon_Social_Media.dart';
+import 'package:zahroobstor/widget/icon_social_media.dart';
 
 class SocialMediaIcon extends StatelessWidget {
   const SocialMediaIcon({super.key, required this.height});

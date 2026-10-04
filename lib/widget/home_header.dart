@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/Profile_Image.dart';
+import 'package:zahroobstor/widget/profile_image.dart';
 import 'package:zahroobstor/widget/app_logo.dart';
 import 'package:zahroobstor/widget/shopping_cart.dart';
 

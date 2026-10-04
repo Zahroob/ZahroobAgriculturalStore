@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:zahroobstor/Body/Home_View_Body.dart';
+import 'package:zahroobstor/body/home_view_body.dart';
 import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
 import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/support_page.dart';
 import 'package:zahroobstor/widget/app_logo.dart';
-import 'package:zahroobstor/widget/store_appBar.dart';
+import 'package:zahroobstor/widget/store_app_bar.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});

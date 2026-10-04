@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/QuantityCounter.dart';
+import 'package:zahroobstor/widget/quantity_counter.dart';
 
 class QuantitySection extends StatelessWidget {
   const QuantitySection({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/widget/ProfileHeader.dart';
-import 'package:zahroobstor/widget/ProfileOptionItem.dart';
+import 'package:zahroobstor/widget/profile_header.dart';
+import 'package:zahroobstor/widget/profile_option_item.dart';
 
 class MyProfileBody extends StatelessWidget {
   const MyProfileBody({super.key});
