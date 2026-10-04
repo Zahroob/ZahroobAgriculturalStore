@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zahroobstor/body/product_details_body.dart';
-import 'package:zahroobstor/widget/app_logo.dart';
 import 'package:zahroobstor/widget/store_app_bar.dart';
 
 class ProductDetailsPage extends StatelessWidget {
@@ -11,7 +10,7 @@ class ProductDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: const StoreAppBar(
         showBackButton: true,
-        logo: AppLogo(),
+        showMenuButton: false,
         title: 'تفاصيل المنتج',
       ),
       body: ProductDetailsBody(),

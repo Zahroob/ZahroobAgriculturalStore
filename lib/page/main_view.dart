@@ -5,7 +5,6 @@ import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
 import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/support_page.dart';
-import 'package:zahroobstor/widget/app_logo.dart';
 import 'package:zahroobstor/widget/store_app_bar.dart';
 
 class MainView extends StatefulWidget {
@@ -18,7 +17,7 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   static const int categoriesTabIndex = 2;
   int currentIndex = 3;
-  final StoreAppBar appBar = StoreAppBar(logo: AppLogo(), title: '',);
+  final StoreAppBar appBar = const StoreAppBar();
 
   late final List<_NavigationItem> navigationItems = [
     const _NavigationItem(
