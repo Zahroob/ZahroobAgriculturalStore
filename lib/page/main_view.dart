@@ -5,6 +5,7 @@ import 'package:zahroobstor/page/cart_page.dart';
 import 'package:zahroobstor/page/categories_page.dart';
 import 'package:zahroobstor/page/my_profily_page.dart';
 import 'package:zahroobstor/page/support_page.dart';
+import 'package:zahroobstor/widget/custom_drawer.dart';
 import 'package:zahroobstor/widget/store_app_bar.dart';
 
 class MainView extends StatefulWidget {
@@ -16,7 +17,7 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   static const int categoriesTabIndex = 2;
-  int currentIndex = 3;
+  int currentIndex = 4;
   final StoreAppBar appBar = const StoreAppBar();
 
   late final List<_NavigationItem> navigationItems = [
@@ -60,19 +61,7 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: currentIndex == 0 ? null : appBar,
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Drawer header'),
-            ),
-            ListTile(title: Text('Item 1'), onTap: () {}),
-            ListTile(title: Text('Item 2'), onTap: () {}),
-          ],
-        ),
-      ),
+      endDrawer: CustomDrawer(),
       drawerScrimColor: Colors.black.withValues(alpha: 0.5),
       endDrawerEnableOpenDragGesture: true,
 

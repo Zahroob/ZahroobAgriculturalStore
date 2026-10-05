@@ -1,0 +1,24 @@
+
+import 'package:flutter/material.dart';
+import 'package:zahroobstor/app/app_routes.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+        scaffoldBackgroundColor: const Color(0xFFF7F3ED),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.green,
+          brightness: Brightness.light,
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splash,
+      routes: AppRoutes.appRoutes,
+    );
+  }
+}

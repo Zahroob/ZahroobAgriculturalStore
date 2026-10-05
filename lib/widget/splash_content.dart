@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zahroobstor/app_routes.dart';
+import 'package:zahroobstor/app/app_routes.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({super.key});
