@@ -9,7 +9,7 @@ class SectionTitle extends StatelessWidget {
     super.key,
     required this.title,
     this.actionText,
-    this.onActionPressed,
+   required this.onActionPressed,
   });
 
   @override

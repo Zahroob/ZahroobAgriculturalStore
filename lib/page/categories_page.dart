@@ -4,10 +4,8 @@ import 'package:zahroobstor/body/categories_body.dart';
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
-    return CategoriesBody();
+    return Scaffold(body: CategoriesBody());
   }
 }

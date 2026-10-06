@@ -28,9 +28,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             const PromoCarousel(),
             HomeCategoriesSection(
               categories: categories,
-              onShowAll:
-                  widget.onShowAllCategories ??
-                  () => Navigator.pushNamed(context, AppRoutes.categories),
+             
             ),
             const MostSoldProducts(),
           ],

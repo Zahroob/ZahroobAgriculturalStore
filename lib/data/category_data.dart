@@ -14,33 +14,23 @@ final List<CategoryDataModel> categories = [
     pageBuilder: (context) => const OneProduct(),
   ),
   CategoryDataModel(
-    title: 'أدوات',
-    icon: Icons.handyman_outlined,
+    title: 'حشري',
+    icon: Icons.bug_report_outlined,
     pageBuilder: (context) => const OneProduct(),
   ),
   CategoryDataModel(
-    title: 'معدات ري',
-    icon: Icons.agriculture_outlined,
+    title: 'فطري',
+    icon: Icons.coronavirus_outlined,
     pageBuilder: (context) => const OneProduct(),
   ),
   CategoryDataModel(
-    title: 'قطع غيار',
-    icon: Icons.settings_outlined,
+    title: 'أكاروسي',
+    icon: Icons.pest_control_outlined,
     pageBuilder: (context) => const OneProduct(),
   ),
   CategoryDataModel(
-    title: 'خراطيم',
-    icon: Icons.water_outlined,
-    pageBuilder: (context) => const OneProduct(),
-  ),
-  CategoryDataModel(
-    title: 'رشاشات',
-    icon: Icons.spa_outlined,
-    pageBuilder: (context) => const OneProduct(),
-  ),
-  CategoryDataModel(
-    title: 'مضخات',
-    icon: Icons.water_drop_outlined,
+    title: 'مغذيات',
+    icon: Icons.science_outlined,
     pageBuilder: (context) => const OneProduct(),
   ),
 ];
